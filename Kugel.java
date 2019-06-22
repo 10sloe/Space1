@@ -9,7 +9,9 @@ public class Kugel
     double vx;
     double vy;
     
-    double radius;
+    double breite;
+    double hoehe;
+    
     boolean sichtbar;
     Color farbe;
 
@@ -17,7 +19,8 @@ public class Kugel
     Kugel(double x_, double y_)
     {
         sichtbar = false;
-        radius = 3;
+        breite = 6;
+        hoehe = 6;
         x = x_;
         y = y_;
         vx = 0;
@@ -41,11 +44,6 @@ public class Kugel
         vy = vy_;
     }
 
-    double getRadius()
-    {
-        return radius;
-    }
-
     void sichtbarMachen()
     {
         sichtbar = true;
@@ -61,7 +59,7 @@ public class Kugel
         if(sichtbar)
         {
             gc.setFill(farbe);  
-            gc.fillOval(x,y,radius*2,radius*2); 
+            gc.fillOval(x,y,breite,hoehe); 
         }
     }
 }
