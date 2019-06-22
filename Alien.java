@@ -12,13 +12,10 @@ public class Alien
     double vy;
 
     Image img;
-    Rectangle box;  
 
     int zaehler; // zählt die Schritte nach links und die Schritte nach rechts
     double breite = 48;
     double hoehe = 48;
-
-    boolean getroffen; // wurde das Alien getroffen oder nicht?
 
     //Konstruktor
     public Alien(double x_,double y_)
@@ -27,10 +24,7 @@ public class Alien
         x = x_;
         y = y_;
         vx = 0.4;
-        getroffen = false;
         img = new Image("alien1.png", true);
-        box = new Rectangle(x,y,breite,hoehe);
-
     }
     //Methoden
 
@@ -57,43 +51,19 @@ public class Alien
 
     public void update()
     {
-        if (getroffen == false)
+        zaehler++;
+        if (zaehler > 300) // Nach 300 Einheiten
         {
-            zaehler++;
-            if (zaehler > 300)
-            {
-                zaehler = 0;
-                vx = -vx;
-                y = y + 10;
-            }
-
-            x = x + vx;
-            box.setX(x);
-            box.setY(y);
+            zaehler = 0;
+            vx = -vx;      // ändert das Alien die Richtung
+            y = y + 10;    // und fliegt ein bisschen tiefer
         }
-    }
-    // wird aufgerufen, wenn das Alien von einer Kugel getroffen wurde
-    public void getroffen()
-    {
-        getroffen = true;
-    }
-
-    public boolean getGetroffen()
-    {
-        return getroffen;
-    }
-
-    Rectangle getBox()
-    {
-        return box;
+        x = x + vx;
     }
 
     void zeichnen(GraphicsContext gc)
     {
-        if(getroffen != true)
-        {
-            gc.drawImage(img,x, y,breite,hoehe);
-        }
+        gc.drawImage(img,x, y,breite,hoehe);
     }
 
 }

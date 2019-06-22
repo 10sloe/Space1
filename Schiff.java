@@ -14,8 +14,7 @@ public class Schiff
     double breite = 48;
     double hoehe = 48;
 
-    Image img;
-    Rectangle box;    
+    Image img; 
 
     //Konstruktor
     public Schiff(double x_,double y_)
@@ -25,7 +24,6 @@ public class Schiff
         vx = 0;
         vy = 0;
         img = new Image("schiff.png", true);
-        box = new Rectangle(x,y,breite,hoehe);
 
     }
 

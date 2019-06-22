@@ -12,9 +12,7 @@ public class Kugel
     double radius;
     boolean sichtbar;
     Color farbe;
-    Rectangle box;
 
-    //Circle symbol;
 
     Kugel(double x_, double y_)
     {
@@ -25,14 +23,11 @@ public class Kugel
         vx = 0;
         vy = 0;
         farbe = Color.YELLOW;
-        box = new Rectangle(x,y,radius*2,radius*2);
     }
 
     void update()
     {
-        y = y + vy;
-        box.setX(x);
-        box.setY(y);      
+        y = y + vy;   
     }
 
     void setPosition(double x_, double y_)
@@ -68,11 +63,6 @@ public class Kugel
             gc.setFill(farbe);  
             gc.fillOval(x,y,radius*2,radius*2); 
         }
-    }
-
-    Rectangle getBox()
-    {
-        return box;
     }
 }
 
