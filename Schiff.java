@@ -11,8 +11,8 @@ public class Schiff
     double vx;
     double vy;
 
-    double breite = 48;
-    double hoehe = 48;
+    double breite;
+    double hoehe;
 
     Image img; 
 
@@ -23,6 +23,9 @@ public class Schiff
         y = y_;
         vx = 0;
         vy = 0;
+        breite = 48;
+        hoehe = 48;
+        
         img = new Image("schiff.png", true);
 
     }

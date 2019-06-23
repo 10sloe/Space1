@@ -8,24 +8,24 @@ public class Kugel
     double y;
     double vx;
     double vy;
-    
+
     double breite;
     double hoehe;
-    
-    boolean sichtbar;
-    Color farbe;
 
+    Color farbe;
+    boolean sichtbar;
 
     Kugel(double x_, double y_)
-    {
-        sichtbar = false;
-        breite = 6;
-        hoehe = 6;
+    {      
         x = x_;
         y = y_;
         vx = 0;
-        vy = 0;
+        vy = 0;       
+        breite = 6;
+        hoehe = 6;
+        
         farbe = Color.YELLOW;
+        sichtbar = false;
     }
 
     void update()

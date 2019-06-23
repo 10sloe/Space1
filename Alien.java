@@ -11,20 +11,26 @@ public class Alien
     double vx;
     double vy;
 
+    double breite;
+    double hoehe;
+
     Image img;
 
     int zaehler; // zählt die Schritte nach links und die Schritte nach rechts
-    double breite = 48;
-    double hoehe = 48;
 
     //Konstruktor
     public Alien(double x_,double y_)
     {
-        zaehler = 0;
+
         x = x_;
         y = y_;
         vx = 0.4;
+        vy = 0;
+        breite = 48;
+        hoehe = 48;
+
         img = new Image("alien1.png", true);
+        zaehler = 0;
     }
     //Methoden
 
